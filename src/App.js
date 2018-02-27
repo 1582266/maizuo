@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import "./style/reset.css";
 import Home from "./components/Home";
 
-
 class App extends Component {
   render() {
     return (

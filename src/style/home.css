@@ -40,3 +40,40 @@
 .home section{
     flex: 1;
 }
+
+
+.showNav-enter {
+    left: -3rem;
+  }
+  
+.showNav-enter.showNav-enter-active {
+    left: 0;
+    transition: left 500ms ease-in;
+  }
+  
+.showNav-leave {
+    left: 0;
+  }
+  
+.showNav-leave.showNav-leave-active {
+    left: -3rem;
+    transition: left 500ms ease-in;
+  }
+
+  .showMark-enter {
+    opacity: 0;
+  }
+  
+.showMark-enter.showMark-enter-active {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in;
+  }
+  
+.showMark-leave {
+    opacity: 0.5;
+  }
+  
+.showMark-leave.showMark-leave-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }

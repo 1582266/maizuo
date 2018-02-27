@@ -21,6 +21,14 @@
     -->
     <title>React App</title>
   </head>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DpKcmZ4vRrZxGfS53AZZYq74HLEecuKX"></script>  
+  <script>
+      window.BMap = BMap;
+  </script>
+  <script type="text/javascript">
+		var rempx = document.documentElement.clientWidth / 3.2;
+		document.getElementsByTagName('html')[0].style.fontSize = rempx + "px";
+  </script>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
@@ -37,8 +45,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script type="text/javascript">
-		var rempx = document.documentElement.clientWidth / 3.2;
-		document.getElementsByTagName('html')[0].style.fontSize = rempx + "px";
-	</script>
 </html>
