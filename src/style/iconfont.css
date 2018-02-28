@@ -1,8 +1,8 @@
 
 @font-face {font-family: "iconfont";
-  src: 
-  url('iconfont.ttf?') format('truetype'), 
-  url('iconfont.woff') format('woff'); 
+  src:
+  url('iconfont.ttf') format('truetype'), 
+  url('iconfont.woff') format('woff');
 }
 
 .iconfont {
@@ -13,9 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-sanhengxian:before { content: "\e6e8"; }
+.icon-moreunfold:before { content: "\e6a6"; }
 
-.icon-jiantouxia:before { content: "\e62d"; }
+.icon-more:before { content: "\e6a7"; }
 
-.icon-xiaoren:before { content: "\e682"; }
+.icon-account:before { content: "\e6b8"; }
+
+.icon-iconfontticket:before { content: "\e653"; }
+
+.icon-gift:before { content: "\e699"; }
+
+.icon-tingchechang:before { content: "\e66b"; }
+
+.icon-ai221:before { content: "\e6d1"; }
+
+.icon-buoumaotubiao23:before { content: "\e615"; }
+
+.icon-phone:before { content: "\e6c2"; }
+
+.icon-icon_sunglasses:before { content: "\e90b"; }
+
+.icon-Chair:before { content: "\e62d"; }
+
+.icon-bus:before { content: "\e6db"; }
 

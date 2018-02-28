@@ -1,0 +1,78 @@
+/* --------------home---------------- */
+.home{
+    display: flex;
+    flex-direction: column;
+}
+.home header{
+    z-index: 100;
+    height: 0.5rem;
+    width: 100%;
+    background: #282828;
+    display: flex;
+    justify-content: space-between;
+    color: #999999;
+    position: fixed;
+}
+.home header ul{
+    display: flex;
+    justify-content: space-between;
+}
+.home header ul li{
+    text-align: center;
+    line-height: 0.5rem;
+}
+    
+.home header ul:nth-child(1) li:nth-child(1){
+    width: 0.48rem;
+    border-right: 1px solid #222222;
+}
+.home header ul:nth-child(1) li:nth-child(2){
+    width: 0.84rem;
+    color: #efefef;
+    border-left: 1px solid #333333;
+}
+.home header ul:nth-child(2) li:nth-child(2){
+    width: 0.22rem;
+    font-size: 12px;
+}
+.home header ul:nth-child(2) li:nth-child(3){
+    width: 0.48rem;
+}
+
+
+
+.showNav-enter {
+    left: -3rem;
+  }
+  
+.showNav-enter.showNav-enter-active {
+    left: 0;
+    transition: left 500ms ease-in;
+  }
+  
+.showNav-leave {
+    left: 0;
+  }
+  
+.showNav-leave.showNav-leave-active {
+    left: -3rem;
+    transition: left 500ms ease-in;
+  }
+
+  .showMark-enter {
+    opacity: 0;
+  }
+  
+.showMark-enter.showMark-enter-active {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in;
+  }
+  
+.showMark-leave {
+    opacity: 0.5;
+  }
+  
+.showMark-leave.showMark-leave-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }

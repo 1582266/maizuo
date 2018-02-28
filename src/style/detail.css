@@ -1,0 +1,57 @@
+.detail{
+  background: #ebebeb;
+  color: #333;
+  overflow: auto;
+  flex: 1;
+  width: 100%;
+  position: absolute;
+  top: 0.5rem;
+}
+.detail img{
+  width: 100%;
+}
+.detail h2{
+  font-size: 16px;
+  line-height: 40px; 
+}
+.detail h2 span{
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background: #e4c89c;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.detail p{
+  min-height: 26px;
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+.detail i{
+  display: inline-block;
+  width: 25px;
+}
+
+.detail h3{
+  margin-top: 10px;
+  padding: 0 20px; 
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.detail button{
+  width: 180px;
+  height: 40px;
+  background: #fe8233;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  left: calc(50% - 90px);
+  z-index: 10;
+  bottom: 20px; 
+  position: fixed;
+}

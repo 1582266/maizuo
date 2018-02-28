@@ -1,0 +1,85 @@
+.cinema{
+  background: #ebebeb;
+  color: #333;
+  overflow: auto;
+  flex: 1;
+  width: 100%;
+  position: absolute;
+  top: 0.5rem;
+}
+.am-list-item{
+  padding-left: 0;
+}
+.am-list-line{
+  padding-right: 0!important;
+}
+.am-accordion-header{
+  background: #e1e1e1 !important;
+  border-bottom: 1px solid #fff !important;
+  font-size: 14px !important;
+  color: #636363 !important;
+}
+.am-accordion-item:last-child .am-accordion-header{
+  border-bottom: none !important;
+}
+
+.cinema ul li{
+  padding: 0.1rem 0.15rem 0.12rem 0.16rem;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  justify-content: space-between;
+}
+.cinema ul li h5:nth-child(2){
+  color: #c9d2e0;
+}
+.cinema ul li h2{
+  font-size: 16px;
+  color: #333;
+  line-height: 0.34rem;
+  max-width: 1.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  float: left;
+}
+.cinema ul li div{
+  height: 0.34rem;
+}
+.cinema ul li div i{
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  line-height: 0.34rem;
+  margin-left: 0.05rem;
+}
+.cinema ul li div i:nth-of-type(1){
+  color: #fc8c8c;
+}
+.cinema ul li div i:nth-of-type(2){
+  color: #8bb3cd;
+}
+.cinema ul li p{
+  width: 0.7rem;
+  height: 0.15rem;
+  background: #51add0;
+  border-radius: 0.02rem;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 0.14rem;
+}
+.cinema ul li h3{
+  font-size: 12px;
+  color: #ccc;
+  line-height: 0.2rem;
+  width: 2.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cinema ul li h4{
+  font-size: 12px;
+  color: #ccc;
+  line-height: 0.22rem;
+}

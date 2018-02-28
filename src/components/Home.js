@@ -1,81 +1,128 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import "../style/iconfont.css";
+import axios from "axios";
 import "../style/home.css";
-import Movie from "./Movie";
-import Nav from "./Nav";
-import Mark from "./Mark";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
+import { Carousel } from 'antd-mobile';
 
-class Home extends Component {
-    constructor(props) {
+class Home extends Component{
+    constructor(props){
         super(props);
         this.state = {
-            flag: false
+            banner : [],
+            nowplaying : [],
+            comingsoon:[]
         }
-        this.changeFlag = this.changeFlag.bind(this);
     }
-    changeFlag () {
-        this.setState({
-            flag: !this.state.flag,
-            city:""
-        })
+    gotoDetail(id){
+        this.props.history.push("/detail/" + id);
     }
     componentDidMount(){
-        var that = this;
-        var BMap = window.BMap;
-        var geolocation = new BMap.Geolocation();
-        geolocation.getCurrentPosition(function(r){
-            if(this.getStatus() == window.BMAP_STATUS_SUCCESS){
-                var geoc = new BMap.Geocoder();
-                geoc.getLocation(r.point, function(rs){
-                    var addComp = rs.addressComponents;
-                    that.setState({
-                        city:addComp.city
-                    })
-                });         
-            }   
-        },{enableHighAccuracy: true})
+        axios.get("/v4/api/billboard/home")
+		.then((res)=>{
+            console.log(res);
+            this.setState({
+                banner:res.data.data.billboards
+            })
+        })
+
+        axios.get("/v4/api/film/now-playing?__t=1517832559924&page=1&count=5")
+		.then((res)=>{
+            console.log(res);
+            this.setState({
+                nowplaying:res.data.data.films
+            })
+        })
+
+        axios.get("/v4/api/film/coming-soon?__t=1519721324127&page=1&count=3")
+		.then((res)=>{
+            console.log(res);
+            this.setState({
+                comingsoon:res.data.data.films
+            })
+        })
     }
-    render(){
-        var nav = <Nav change={this.changeFlag} />;
-        var mark = <Mark onClick={this.changeFlag} />;
-        if(this.state.flag == false){
-            nav = null;
-            mark = null;
-        }
+    render() {
+        var that = this;
         return (
-            <div className="home">
-                <ReactCSSTransitionGroup
-                transitionName="showNav"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}>
-                    {nav}
-                </ReactCSSTransitionGroup>
-                
-                <ReactCSSTransitionGroup
-                transitionName="showMark"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}>
-                    {mark}
-                </ReactCSSTransitionGroup>
-                <header>
-                    <ul>
-                        <li className="iconfont icon-sanhengxian" onClick={this.changeFlag}></li>
-                        <li>卖座电影</li>
-                    </ul>
-                    <ul>
-                        <li>{this.state.city}</li>
-                        <li className="iconfont icon-jiantouxia"></li>
-                        <li className="iconfont icon-xiaoren"></li>
-                    </ul>
-                </header>
+            <div>
                 <section>
-                    <Route path="/movie" component={Movie} />
-                </section>  
+                <Carousel
+                    autoplay={true}
+                    infinite
+                    selectedIndex={0}
+                    >
+                    {this.state.banner.map(val => (
+                        <a
+                        key={val}
+                        style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                        >
+                        <img
+                            src={val.imageUrl}
+                            alt=""
+                            style={{ width: '100%', verticalAlign: 'top' }}
+                            onLoad={() => {
+                                window.dispatchEvent(new Event('resize'));
+                                this.setState({ imgHeight: 'auto' });
+                            }}
+                        />
+                        </a>
+                    ))}
+                </Carousel>
+                <ul className="list">
+                {
+                    this.state.nowplaying.map((item,index)=>{
+                        return(
+                            <li key={item.id} onClick={()=>that.gotoDetail(item.id)} >
+                            <img src={item.cover.origin} alt=""/>
+                                <div className="msg">
+                                    <div className="left">
+                                        <p>{item.name}</p>
+                                        <p>142家影院上映 1690615人购票</p>
+                                    </div>
+                                    <div className="right">
+                                        8.4
+                                    </div>
+                                </div>
+                            </li>
+                        )
+                    })   
+                }
+                    <li>
+                        更多热映电影
+                    </li>
+                </ul>
+
+                <div className="line">
+					<p>即将上映</p>
+				</div>
+
+				<ul className="list">
+                {
+                    this.state.comingsoon.map((item,index)=>{
+                        return(
+                            <li key={item.id} onClick={()=>that.gotoDetail(item.id)} >
+                                <img src={item.cover.origin} alt=""/>
+                                <div className="msg">
+                                    <div className="left">
+                                        <p>{item.name}</p>
+                                        <p>142家影院上映 1690615人购票</p>
+                                    </div>
+                                    <div className="right">
+                                        8.4
+                                    </div>
+                                </div>
+                            </li>
+                        )
+                    })
+                        
+                }
+                    <li>
+						更多即将上映电影
+					</li>
+                </ul>
+                </section>
             </div>
-        )
+           
+        );
     }
 }
-
 export default Home;

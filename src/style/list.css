@@ -1,0 +1,79 @@
+body{
+  background-color: #f9f9f9 !important;
+}
+.movies{
+  overflow: auto;
+  flex: 1;
+  width: 100%;
+  position: absolute;
+  top: 0.5rem;
+  padding: 0 0.15rem;
+  min-height: 100%;
+}
+.am-tabs-default-bar{
+  background: #f9f9f9 !important;
+}
+.am-tabs-default-bar-tab{
+  font-size: 16px !important;
+}
+.movies .am-tabs-default-bar-tab-active{
+  color: #fe6e00;
+}
+.movies .am-tabs-default-bar-underline{
+  border:1px #fe6e00 solid;
+}
+.movies .am-tabs-default-bar-top{
+  border-bottom: 1px solid #fe6e00;
+  color: #6a6a6a;
+}
+
+.movies ul{
+  width: 100%;
+}
+.movies ul li{
+  display: flex;
+  padding: 0.2rem 0;
+  border-bottom: 1px dashed #c9c9c9;
+}
+.movies ul li:last-child{
+  border-bottom: none;
+}
+.movies ul li img{
+  width: 0.6rem;
+  height: 0.83rem;
+  margin-right: 0.15rem;
+}
+.movies ul li div{
+  width: 65%;
+}
+.movies ul li div h2{
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.34rem;
+}
+.movies ul li div h2 span:nth-child(1){
+  color: #000;
+  font-size: 16px;
+}
+.movies ul li div h2 span:nth-child(2){
+  color: #fc7103;
+  font-size: 16px;
+}
+.movies ul li div h2 span:nth-child(2) i{
+  color: #d1c9cf;
+}
+.movies ul li div h3{
+  color: #8e8e8e;
+  font-size: 12px;
+  line-height: 0.2rem;
+}
+.movies ul li div h4{
+  color: #8e8e8e;
+  font-size: 12px;
+  line-height: 0.34rem;
+  display: flex;
+  justify-content: space-between;
+}
+.movies ul li div h4 span{
+  color: #97a2cb;
+}
