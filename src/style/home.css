@@ -1,12 +1,13 @@
 section{
-    flex: 1;
     background: #ebebeb;
     overflow: auto;
     width: 100%;
     position: absolute;
     top: 0.5rem;
   }
-  
+  section .slider,section .slider-frame,section .slider-list{
+    height: 1.8rem !important;
+  }
   section .list{
     display: flex;
     flex-direction: column;

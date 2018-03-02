@@ -1,0 +1,126 @@
+.infos{
+  background: #ebebeb;
+  color: #333;
+  overflow: auto;
+  flex: 1;
+  width: 100%;
+  position: absolute;
+  top: 0.5rem;
+}
+.infos img{
+  width: 100%;
+}
+.infos>div>div{
+  display: flex;
+  padding: 0.25rem 0.17rem 0;
+  background: #f9f9f9;
+}
+.infos>div>div span{
+  font-size: 26px;
+  margin-right: 0.2rem;
+  line-height: 0.54rem;
+}
+.infos>div>div:nth-of-type(1) span{
+  color: #ff8160;
+}
+.infos>div>div:nth-of-type(2) span{
+  color: #62bdcc;
+}
+.infos>div>div:nth-of-type(2) .msg h3 i:nth-child(2){
+  color: #ff8032;
+  border: 1px solid #ff8032;
+  background: #f9f9f9;
+}
+.infos>div>div:nth-of-type(3) span{
+  color: #7bb1e4;
+}
+.infos>div>div:nth-of-type(4) span{
+  color: #df8f9f;
+}
+.infos>div>div:nth-of-type(3) .msg{
+  line-height: 0.18rem;
+}
+.infos .msg{
+  border-bottom: 1px dotted #d6d6d6;
+  padding-bottom: 0.22rem;
+  width: 2.4rem;
+  line-height: 0.4rem;
+  color: #000;
+  font-size: 14px;
+}
+.infos .msg h3{
+  line-height: 0.34rem;
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+.infos .msg h3 i:nth-child(2){
+  display: inline-block;
+  width: 0.94rem;
+  height: 0.34rem;
+  line-break: 0.34rem;
+  text-align: center;
+  color: #fff;
+  background: #fe8233;
+  border-radius: 0.17rem;
+}
+.infos .msg h4{
+  line-height: 0.22rem;
+  font-size: 12px;
+  color: #737373;
+}
+
+.infos>div>div:nth-of-type(4) .msg{
+   padding-bottom: 0;
+   border-bottom: 0;
+}
+.infos>div>div:nth-of-type(4){
+  margin-bottom: 0.15rem;
+}
+
+.infos .am-tabs-default-bar-tab-active {
+  color: #fd8c44 !important;
+  border-color: #fd8c44 !important;
+}
+
+.infos .am-tabs-default-bar-tab{
+  color: #737373;
+  font-size: 12px !important;
+}
+.infos .am-tabs-default-bar-underline {
+  border: 1px #ff8032 solid;
+}
+.infos .am-tabs-tab-bar-wrap .am-tabs-default-bar-tab{
+  height: 0.68rem;
+}
+.infos .am-tabs-tab-bar-wrap{
+  border-bottom: 1px solid #d6d6d6;
+}
+.infos .am-tabs-pane-wrap{
+  line-height: 0.18rem;
+  padding-top: 0.13rem;
+  padding-bottom: 0.26rem ;
+  padding-left: 0.08rem;
+  font-size: 12px;
+  color: #333;
+}
+.infos .icons{
+  display: flex;
+  flex-direction: column;
+  line-height: 0.3rem;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.infos .icons .iconfont{
+  display: inline-block;
+  width:0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  border: 1px solid #cecece;
+  text-align: center;
+  line-height: 0.38rem;
+}
+
+

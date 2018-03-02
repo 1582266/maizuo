@@ -10,10 +10,10 @@ body{
   padding: 0 0.15rem;
   min-height: 100%;
 }
-.am-tabs-default-bar{
+.movies .am-tabs-default-bar{
   background: #f9f9f9 !important;
 }
-.am-tabs-default-bar-tab{
+.movies .am-tabs-default-bar-tab{
   font-size: 16px !important;
 }
 .movies .am-tabs-default-bar-tab-active{

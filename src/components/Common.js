@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import "../style/iconfont.css";
 import "../style/common.css";
 import Nav from "./Nav";
@@ -25,7 +24,7 @@ class Common extends Component {
         var BMap = window.BMap;
         var geolocation = new BMap.Geolocation();
         geolocation.getCurrentPosition(function(r){
-            if(this.getStatus() == window.BMAP_STATUS_SUCCESS){
+            if(this.getStatus() === window.BMAP_STATUS_SUCCESS){
                 var geoc = new BMap.Geocoder();
                 geoc.getLocation(r.point, function(rs){
                     var addComp = rs.addressComponents;
@@ -39,7 +38,7 @@ class Common extends Component {
     render(){
         var nav = <Nav change={this.changeFlag} />;
         var mark = <Mark onClick={this.changeFlag} />;
-        if(this.state.flag == false){
+        if(this.state.flag === false){
             nav = null;
             mark = null;
         }

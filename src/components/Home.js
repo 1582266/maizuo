@@ -18,15 +18,13 @@ class Home extends Component{
     componentDidMount(){
         axios.get("/v4/api/billboard/home")
 		.then((res)=>{
-            console.log(res);
-            this.setState({
+            res.data.data.billboards && this.setState({
                 banner:res.data.data.billboards
             })
         })
 
         axios.get("/v4/api/film/now-playing?__t=1517832559924&page=1&count=5")
 		.then((res)=>{
-            console.log(res);
             this.setState({
                 nowplaying:res.data.data.films
             })
@@ -34,7 +32,6 @@ class Home extends Component{
 
         axios.get("/v4/api/film/coming-soon?__t=1519721324127&page=1&count=3")
 		.then((res)=>{
-            console.log(res);
             this.setState({
                 comingsoon:res.data.data.films
             })
@@ -48,9 +45,8 @@ class Home extends Component{
                 <Carousel
                     autoplay={true}
                     infinite
-                    selectedIndex={0}
                     >
-                    {this.state.banner.map(val => (
+                    {this.state.banner && this.state.banner.map(val => (
                         <a
                         key={val}
                         style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
@@ -59,10 +55,6 @@ class Home extends Component{
                             src={val.imageUrl}
                             alt=""
                             style={{ width: '100%', verticalAlign: 'top' }}
-                            onLoad={() => {
-                                window.dispatchEvent(new Event('resize'));
-                                this.setState({ imgHeight: 'auto' });
-                            }}
                         />
                         </a>
                     ))}

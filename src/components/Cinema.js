@@ -11,14 +11,17 @@ class Cinema extends Component{
             area:[]
         }
     }
+    gotoInfos(id){
+        this.props.history.push("/cinemainfo/" + id);
+    }
     componentDidMount(){
         axios.get("/v4/api/cinema")
         .then((res)=>{
-            this.state.cinemas = res.data.data.cinemas;
-            this.state.cinemas.map((item,index)=>{
-                if(this.state.area.indexOf(item.district.name) == -1){
+            res.data.data.cinemas.map((item,index)=>{
+                if(this.state.area.indexOf(item.district.name) === -1){
                     this.state.area.push(item.district.name);
                 }
+                return this.state.area;
             })
             
             this.setState({
@@ -40,9 +43,10 @@ class Cinema extends Component{
                                         <ul>
                                             {
                                                 this.state.cinemas.map((val,index)=>{
-                                                    if(val.district.name == item){
-                                                        return(
-                                                            <li key={val.id}>
+                                                    return(
+                                                        <div key={val.id}>
+                                                            {val.district.name === item? 
+                                                                (<li key={val.id} onClick={()=>this.gotoInfos(val.id)}>
                                                                 <h5>
                                                                     <div>
                                                                         <h2>{val.name}</h2>
@@ -54,10 +58,9 @@ class Cinema extends Component{
                                                                     <h4>距离未知</h4>
                                                                 </h5>
                                                                 <h5 className="iconfont">&#xe6a7;</h5>
-                                                            </li>
-                                                        )
-                                                    }
-                                                    
+                                                                </li>) : ""}
+                                                        </div>
+                                                    )   
                                                 })                                             
                                             }
                                         </ul>
