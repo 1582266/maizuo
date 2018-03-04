@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
 }
-.cinema ul li h5:nth-child(2){
+.cinema ul li .box_icon{
   color: #c9d2e0;
 }
 .cinema ul li h2{
@@ -43,20 +43,20 @@
   display: inline-block;
   float: left;
 }
-.cinema ul li div{
+.cinema ul li .wrap{
   height: 0.34rem;
 }
-.cinema ul li div i{
+.cinema ul li .wrap i{
   display: inline-block;
   vertical-align: top;
   float: left;
   line-height: 0.34rem;
   margin-left: 0.05rem;
 }
-.cinema ul li div i:nth-of-type(1){
+.cinema ul li .wrap i:nth-of-type(1){
   color: #fc8c8c;
 }
-.cinema ul li div i:nth-of-type(2){
+.cinema ul li .wrap i:nth-of-type(2){
   color: #8bb3cd;
 }
 .cinema ul li p{

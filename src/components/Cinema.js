@@ -47,8 +47,8 @@ class Cinema extends Component{
                                                         <div key={val.id}>
                                                             {val.district.name === item? 
                                                                 (<li key={val.id} onClick={()=>this.gotoInfos(val.id)}>
-                                                                <h5>
-                                                                    <div>
+                                                                <div className="box">
+                                                                    <div className="wrap">
                                                                         <h2>{val.name}</h2>
                                                                         <i className="iconfont">&#xe62d;</i>
                                                                         <i className="iconfont">&#xe653;</i>
@@ -56,8 +56,8 @@ class Cinema extends Component{
                                                                     {val.labels.length ? <p>可乐爆米花</p> : ""} 
                                                                     <h3>{val.address}</h3>
                                                                     <h4>距离未知</h4>
-                                                                </h5>
-                                                                <h5 className="iconfont">&#xe6a7;</h5>
+                                                                </div>
+                                                                <div className="box_icon iconfont">&#xe6a7;</div>
                                                                 </li>) : ""}
                                                         </div>
                                                     )   

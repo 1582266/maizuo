@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import {Link} from "react-router-dom";
 import "../style/detail.css";
 
 class Detail extends Component{
@@ -10,11 +11,9 @@ class Detail extends Component{
         }
     }
     componentDidMount(){
-        console.log(this.props.match.params.id);
         var id = this.props.match.params.id;
         axios.get("/v4/api/film/" + id)
         .then((res)=>{
-            console.log(res);
             this.state.detail.push(res.data.data.film);
             this.setState({
                 detail: this.state.detail
@@ -23,7 +22,6 @@ class Detail extends Component{
     }
     render() {
         var details = this.state.detail;
-        console.log(details);
         return (
             <div className="detail">
             {
@@ -46,7 +44,7 @@ class Detail extends Component{
                             <p>类<i></i>型：{item.category}</p>
                             <p>上映日期：1月19日上映</p>
                             <h3>{item.synopsis}</h3>
-                            <button>立即购票</button>
+                            <Link to="/cinema"><button >立即购票</button></Link>
                             <p></p>
                             <p></p>
                             <p></p>

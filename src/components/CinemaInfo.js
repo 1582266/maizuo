@@ -40,7 +40,7 @@ class CinemaInfo extends Component{
                 infos: this.state.infos,
                 server : this.state.server
             })
-            
+           
         })
     }
     gotoList(id){

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import "../style/home.css";
 import { Carousel } from 'antd-mobile';
+import {Link} from "react-router-dom";
 
 class Home extends Component{
     constructor(props){
@@ -22,7 +23,6 @@ class Home extends Component{
                 banner:res.data.data.billboards
             })
         })
-
         axios.get("/v4/api/film/now-playing?__t=1517832559924&page=1&count=5")
 		.then((res)=>{
             this.setState({
@@ -55,6 +55,7 @@ class Home extends Component{
                             src={val.imageUrl}
                             alt=""
                             style={{ width: '100%', verticalAlign: 'top' }}
+                            onClick={()=>this.gotoDetail(val.url.substring(val.url.length-4,val.url.length))}
                         />
                         </a>
                     ))}
@@ -78,9 +79,7 @@ class Home extends Component{
                         )
                     })   
                 }
-                    <li>
-                        更多热映电影
-                    </li>
+                    <Link to="/list"><li>更多热映电影</li></Link>
                 </ul>
 
                 <div className="line">
@@ -104,16 +103,12 @@ class Home extends Component{
                                 </div>
                             </li>
                         )
-                    })
-                        
+                    })                       
                 }
-                    <li>
-						更多即将上映电影
-					</li>
+                    <Link to="/list"><li>更多即将上映电影</li></Link>
                 </ul>
                 </section>
-            </div>
-           
+            </div>          
         );
     }
 }
